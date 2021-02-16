@@ -18,4 +18,12 @@ public class GoogleSearchTests {
         $(By.name("q")).val("Selenide").pressEnter();
         $(withText("selenide.org")).shouldBe(visible);
     }
+    
+    @Test
+    public void searchSelenideInYandexTest() {
+        open("https://yandex.ru/");
+        $(By.name("text")).val("Selenide").pressEnter();
+        $(By.linkText("Selenide: concise UI tests in Java")).shouldBe(Condition.appear);
+
+    }
 }
